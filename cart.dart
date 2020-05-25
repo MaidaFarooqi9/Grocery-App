@@ -44,37 +44,44 @@ void set(){locator.registerSingleton(Order());}
 
         child:Column(
 
-
+mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              children: <Widget>[
 
 
 
 
-               Text('You can order the products by sending the details on our email id or by making a phone call',textAlign:TextAlign.center,
-                style:new TextStyle(
-                color:Colors.pink,
-                fontStyle:FontStyle.italic,
-                fontSize: 36.0,
+               Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Text('You can order the products by sending the details on our email id or by making a phone call',textAlign:TextAlign.center,
+                  style:new TextStyle(
+                  color:Colors.pink,
+                  fontStyle:FontStyle.italic,
+                  fontSize: 36.0,
 
-                      )),
+                        )),
+               ),
 
-              Center(
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Center(
      child: Row(
+       mainAxisAlignment: MainAxisAlignment.center,
      children: <Widget>[
 
-               IconButton(onPressed: (){
+                 IconButton(onPressed: (){
 
-                  _service.call(num);
-                  }, icon: Icon(Icons.add_call),color:Colors.green,iconSize:29.0,splashColor: Colors.yellowAccent),
+                    _service.call(num);
+                    }, icon: Icon(Icons.add_call),color:Colors.green,iconSize:72.0,splashColor: Colors.yellowAccent),
        IconButton(onPressed: (){
 
          _service.sendMail(email);
-       }, icon: Icon(Icons.email),color:Colors.red,iconSize:29.0,splashColor: Colors.yellowAccent),
+       }, icon: Icon(Icons.email),color:Colors.red,iconSize:72.0,splashColor: Colors.yellowAccent),
 
 
      ],
       ),
             ),
+              ),
 
                //Center(child:IconButton( onPressed: () {}, icon: Icon(Icons.email),color:Colors.lightGreenAccent,iconSize: 29.0,splashColor: Colors.yellowAccent,),
                  //     ),

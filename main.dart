@@ -75,42 +75,104 @@ class _MyAppState extends State<MyApp> {
 
     return Scaffold(
       appBar: AppBar(title: Text("Grocery Store"),
-                     backgroundColor: Colors.green),
+                     backgroundColor: Colors.green,),
+                     drawer:Drawer(child:ListView(
+            padding:EdgeInsets.all(4.0),
+            children: <Widget>[
+                          DrawerHeader(
+                          child:Container(
+                            width: 100,
+                            height: 100,
+                       decoration: BoxDecoration(color: Colors.green.withOpacity(0.5),
+                        // shape:BoxShape.circle,
+                           borderRadius: BorderRadius.all(
+                             Radius.circular(160.0),
+                               ),
+                         image: DecorationImage(
+
+                           image:
+                         NetworkImage("https://classroomclipart.com/images/gallery/Clipart/Vegetables/TN_green-peas-leaf-tendrils-clipart-318.jpg"),
+                         fit:BoxFit.fill),
+                         ),
+                        ),
+
+                          ),
+              ListTile(
+                              title:Text('Vegetables',
+                      style:new TextStyle(
+                        backgroundColor: Colors.pinkAccent.withOpacity(0.3),
+                      color:Colors.green,
+                      fontSize:24,
+
+                      ),) ,
+                      onTap:(){
+
+                      Navigator.pushNamed(context,'/veg');},
+                      ),
+                      ListTile(
+                      title:Text('Fruits',
+                      style:new TextStyle(
+                        backgroundColor: Colors.pinkAccent.withOpacity(0.3),
+                      color:Colors.green,
+                      fontSize:24,
+
+                      ),) ,
+                        onTap:(){
+
+                          Navigator.pushNamed(context,'/fruit');},
+
+                      ),
+                      ListTile(
+                      title:Text('Order',
+                      style:new TextStyle(
+                        backgroundColor: Colors.pinkAccent.withOpacity(0.3),
+                      color:Colors.green,
+                      fontSize:24,
+                      ),) ,
+                      onTap:(){
+                      Navigator.pushNamed(context,'/cart');
+                      }
+                      ),
+                      ],
+                      ),),
 
 
-      body:ListView(
+      body:Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
 
-        scrollDirection: Axis.vertical,
-
-
-        children: <Widget>[
-
-
-          InkWell(
-
-            child: carousel_Veg,
-            onTap:(){
-              setState(() {
-                Navigator.pushNamed(context, '/veg');
-              });
-            },
-          ),
+          scrollDirection: Axis.vertical,
 
 
-          Text("                                                              "),
-          Text("                                                                 "),
+          children: <Widget>[
+
+                 Text(''),
+            InkWell(
+
+              child: carousel_Veg,
+              onTap:(){
+                setState(() {
+                  Navigator.pushNamed(context, '/veg');
+                });
+              },
+            ),
 
 
-          InkWell(
-            child: carousel_Fruit,
-            onTap:(){
-              setState(() {
-                Navigator.pushNamed(context, '/fruit');
-              });
-            },
+            Text("                                                              "),
+            Text("                                                                 "),
 
-          ),
-        ],),
+
+            InkWell(
+              child: carousel_Fruit,
+              onTap:(){
+                setState(() {
+                  Navigator.pushNamed(context, '/fruit');
+                });
+              },
+
+            ),
+          ],),
+      ),
 
 
 
