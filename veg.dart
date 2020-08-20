@@ -5,14 +5,10 @@ import 'main.dart';
 import 'package:trialcomponents/Veg_newPage.dart';
 class Veg extends StatefulWidget {
 
-
-
   @override
   _VegState createState() => _VegState();
 }
-
 class _VegState extends State<Veg> {
-
   @override
 
   /*List <Veg_Details>cart=[];
@@ -66,12 +62,6 @@ class _VegState extends State<Veg> {
   ];
 
   Widget build(BuildContext context) {
-
-
-
-
-
-
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -80,16 +70,12 @@ class _VegState extends State<Veg> {
       actions: <Widget>[new IconButton(icon: Icon(Icons.shopping_cart),color:Colors.pink, onPressed:(){
                   Navigator.pushNamed(context, '/cart');
   //Navigator.push(context, MaterialPageRoute(builder: (context) => new Veg_newPage(product:'name',price: 'price',pic:'pic')));
-
-
        }),],
        ),
         body:(
         InkWell(
-
            onTap: (){
                },
-
            child: GridView.builder(itemCount: product_list.length,
         gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2),
@@ -100,48 +86,29 @@ class _VegState extends State<Veg> {
             pro_pic: product_list[index]['pic'],
             pro_price: product_list[index]['price'],
           );
-
-
         }
-
     ),)
-
     ),
     );
   }
-
 }
-
 class Veg_Details extends StatelessWidget {
-
-
  final pro_name;
  final pro_pic ;
  final pro_price;
-
-
-
   Veg_Details({this.pro_name,this.pro_pic,this.pro_price});
  var cart=[];
-
  @override
   Widget build(BuildContext context) {
     return Card(
-
      child:InkWell(
        onTap: () {
-
-
        //  Colors.green;
          //cart.add ( new Veg_newPage(product:pro_name, price:pro_price, pic:pro_pic));
-
   Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new Veg_newPage(product:pro_name, price:pro_price, pic:pro_pic,)));
        },
-
-
             child: GridTile(
         footer:Container(
-
           color:Colors.white,
           child:ListTile(
             leading: Text(pro_name,style: TextStyle(fontWeight:FontWeight.bold),),
@@ -149,32 +116,18 @@ class Veg_Details extends StatelessWidget {
            // onTap: (){
            // },
             //subtitle:IconButton(icon:Icon(Icons.favorite, color:Colors.pink),onPressed:(){
-
-
-
-
-
               // build(context){
            //new Veg_newPage(product: pro_name,
             //pic: pro_pic,
               //price: pro_price,);
-
           //}
               //}),
-
-
-
         ),
-
-
-
         ),
         child:pro_pic,
-
       ),
      ),
     );
-
   }
 }
 
